@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Macros.MenuPage"
+             xmlns:pages="clr-namespace:Macros"
+                  Title="I am Master" MasterBehavior="Popover">
+  <MasterDetailPage.Master>
+        <ContentPage BackgroundColor="#1b5366" Title="Dash">
+            <ContentPage.Content>
+                <StackLayout Margin="0">
+                    <!--<Label Text="Macros" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#fafafa"></Label>-->
+
+                    <Image x:Name="MenuBannerImage" Source="Banner.png" HeightRequest="100" Aspect="AspectFill"></Image>
+                    
+                    <!--<BoxView HeightRequest="1" BackgroundColor="#000"></BoxView>-->
+                    <Button Text="BMR" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="Handle_Clicked" TextColor="#fafafa"></Button>
+
+                    <Button Text="About" BackgroundColor="Transparent" Clicked="Handle_Clicked2" TextColor="#fafafa"></Button>
+                    
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    <!--<pages:MenuPageMaster x:Name="MasterPage" />-->
+  </MasterDetailPage.Master>
+  <MasterDetailPage.Detail>
+    <!--<NavigationPage>
+      <x:Arguments>
+        <pages:MenuPageDetail />
+      </x:Arguments>
+    </NavigationPage>-->
+        <ContentPage Padding="10" BackgroundColor="#fafafa">
+            <ContentPage.Content>
+                <StackLayout Margin="5,30,5,5">
+                    <Label Text="Dash" />
+                </StackLayout>
+            </ContentPage.Content>
+        </ContentPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

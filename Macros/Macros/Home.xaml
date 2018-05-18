@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Macros.Home"
+             Title="BMR">
+    <ContentPage.Content>
+        <ScrollView x:Name="BMRView">
+            <StackLayout BackgroundColor="#f1f1f1"
+                     Margin="0,0,0,0"
+                     Padding="10"
+                     >
+                <!--<BoxView BackgroundColor="Gray">
+
+            </BoxView>-->
+                <!--<Label Text="Home" 
+                HorizontalOptions="CenterAndExpand" />-->
+
+                <Label x:Name="BMRResult" Text="" FontSize="Large" FontAttributes="Bold" TextColor="#607D8B" 
+                HorizontalOptions="CenterAndExpand" Margin="20,20,20,20" Opacity="0" IsVisible="False"  />
+
+                <!--<Label Text="Your Gender" VerticalOptions="Center"></Label>-->
+
+                <Picker x:Name="Gender" Title="Choose your gender:"
+                VerticalOptions="Center"
+                         TextColor="#212121"
+                >
+                    <Picker.Items>
+                        <x:String>Male</x:String>
+                        <x:String>Female</x:String>
+                    </Picker.Items>
+                </Picker>
+
+
+                <Entry  x:Name="Weight" Placeholder="Enter your weight (in kilos)" PlaceholderColor="#757575" TextColor="#212121"  Keyboard="Numeric" VerticalOptions="Center">
+                </Entry>
+
+                <!--<Label Text="Your Height" VerticalOptions="Center"></Label>-->
+
+                <Picker x:Name="HeightO" Title="Choose your height type"
+                VerticalOptions="Center"
+                 TextColor="#212121"
+                >
+                    <!--SelectedIndexChanged="OnPickerSelectedIndexChanged"-->
+                    <Picker.Items>
+                        <x:String>Feet</x:String>
+                        <x:String>Centi-meters</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry  x:Name="Height" Placeholder="Enter your height"  Keyboard="Numeric" TextColor="#212121" ></Entry>
+                <!--<Label Text="Your Age" VerticalOptions="Center"></Label>-->
+                <Entry  x:Name="Age" Placeholder="Age (in years)" Keyboard="Numeric" TextColor="#212121">
+                </Entry>
+                <!--<DatePicker>
+                
+            </DatePicker>-->
+
+                <Button Text="Calculate BMR" BackgroundColor="#f16d6a" BorderColor="#bc4f4d" BorderWidth="1" TextColor="#fafafa" Clicked="CalculateBMR" ></Button>
+                <Button x:Name="ResetButton" Text="Reset" BackgroundColor="#607D8B" BorderColor="#1b5366" TextColor="#fafafa" Clicked="Reset" IsVisible="False" ></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
