@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using System.IO;
 //using FootPrint.Droid;
 
 namespace Macros.Droid
@@ -20,8 +21,12 @@ namespace Macros.Droid
 
             base.OnCreate(bundle);
 
+            string fileName = "footprint_db.sqlite";
+            string fileLocation = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+            string fullPath = Path.Combine(fileLocation, fileName);
+
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            LoadApplication(new App());
+            LoadApplication(new App(fullPath));
         }
     }
 }

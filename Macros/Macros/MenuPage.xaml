@@ -16,7 +16,11 @@
                     <Button Text="BMR" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="Handle_Clicked" TextColor="#fafafa"></Button>
 
                     <Button Text="About" BackgroundColor="Transparent" Clicked="Handle_Clicked2" TextColor="#fafafa"></Button>
+
+                    <Button Text="Data" BackgroundColor="Transparent" Clicked="DBPage_Clicked" TextColor="#fafafa"></Button>
                     
+                    <Button Text="Home" BackgroundColor="Transparent" Clicked="HomePage_Clicked" TextColor="#fafafa"></Button>
+
                 </StackLayout>
             </ContentPage.Content>
         </ContentPage>

@@ -9,12 +9,21 @@ namespace Macros
 {
 	public partial class App : Application
 	{
-		public App ()
+        public static string DB_PATH = string.Empty;
+
+        public App ()
 		{
 			InitializeComponent();
 
             MainPage = new MenuPage();
 		}
+
+        public App(string DB_Path)
+        {
+            InitializeComponent();
+            DB_PATH = DB_Path;
+            MainPage = new MenuPage();
+        }
 
 		protected override void OnStart ()
 		{

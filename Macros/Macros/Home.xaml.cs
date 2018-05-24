@@ -52,13 +52,16 @@ namespace Macros
                         HeightValue = (float)(float.Parse(Height.Text) * 0.39); // in inches
                     }
 
-                    var Bmr = new BMR()
-                    {
-                        //weight = float.Parse(Weight.Text), //Kilos
-                        weight = (float)(float.Parse(Weight.Text) * 2.2), //Lbs
-                        height = HeightValue,
-                        age = float.Parse(Age.Text)
-                    };
+
+
+                    var Bmr = new BMR();
+
+                    //weight = float.Parse(Weight.Text); //Kilos
+                    Bmr.weight = (float)(float.Parse(Weight.Text) * 2.2); //Lbs
+                      Bmr.height = HeightValue;
+                      Bmr.age = float.Parse(Age.Text);
+                     
+                    
 
                     if (Gender.Items[Gender.SelectedIndex] == "Male")
                     {
@@ -70,14 +73,33 @@ namespace Macros
                         //BMRValue = (float)(10 * Bmr.weight + 6.25 * Bmr.height - 5 * Bmr.age) ;
                         BMRValue = (float)(655 + (Bmr.weight * 4.35) + (4.7 * Bmr.height) - (4.7 * Bmr.age));
                     }
+                    Bmr.bmrValue = BMRValue;
 
                     BMRResult.Text = "Your BMR value is " + BMRValue.ToString("0.00");
                     BMRResult.IsVisible = true;
                     BMRResult.FadeTo(1, 1000);
                     ResetButton.IsVisible = true;
+
+                    //sqlite
+                    using (SQLite.SQLiteConnection connection = new SQLite.SQLiteConnection((App.DB_PATH)))
+                    {
+                        connection.CreateTable<BMR>();
+                        var NumberOfRows =  connection.Insert(Bmr);
+
+                        if(NumberOfRows > 0)
+                        {
+                            DisplayAlert("Success", "DB Insertion successful", "exit");
+                        }
+                        else
+                        {
+                            DisplayAlert("failure", "DB insertion failed", "exit");
+                        }
+                    }
+
+                    //sqlite
                 }
 
-                
+
             }
 
             catch(Exception ex)
@@ -101,5 +123,16 @@ namespace Macros
 
             Age.Text = "";
         }
+
+        //protected override bool OnBackButtonPressed()
+        //{
+        //    Device.BeginInvokeOnMainThread(async () =>
+        //    {
+        //        var result = await this.DisplayAlert("Alert!", "Do you want to exit?", "Yes", "No");
+        //        if (result) await this.Navigation.PopAsync();
+        //    });
+
+        //    return true;
+        //}
     }
 }

@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Macros.HomePage"
+             Title="Footprint"
+             >
+    <ContentPage.Content>
+        <!--<AbsoluteLayout VerticalOptions="CenterAndExpand"  HorizontalOptions="FillAndExpand">-->
+
+            <!--<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            Source="AppBackgroundMedical_.png" Aspect="AspectFill"/>-->
+
+            <ScrollView x:Name="HomeScroll" >
+                <StackLayout Orientation="Vertical" >
+
+                    <StackLayout Orientation="Horizontal" Padding="10" HeightRequest="160" HorizontalOptions="CenterAndExpand">
+
+
+                        <Frame CornerRadius="5" Margin="5" Padding="0" IsClippedToBounds="True" HasShadow="True">
+                            <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Image Source="bg1.png" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"></Image>
+                            
+                            <StackLayout Padding="45,55,0,0">
+                                <AbsoluteLayout>
+                                    <Label Text="B.M.R"
+                                             HorizontalTextAlignment="Center"
+                                            VerticalTextAlignment="Center"
+                                            FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                           TextColor="White" FontSize="30" />
+                                </AbsoluteLayout>
+                                    
+                                </StackLayout>
+                            </AbsoluteLayout>   
+                        </Frame>
+
+                        <Frame CornerRadius="5" Margin="5" Padding="0" IsClippedToBounds="True" HasShadow="True">
+                            <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                <Image Source="bg2.png" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"></Image>
+                            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="35,55,0,0">
+
+                                <Label Text="Macros"
+                                            VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+                                            FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                           TextColor="White" FontSize="30"/>
+                            </StackLayout>
+                        </AbsoluteLayout>
+                        </Frame>
+                </StackLayout>
+
+                    <!--<Button Text="Demo"></Button>-->
+
+                </StackLayout>
+
+            </ScrollView>
+
+        <!--</AbsoluteLayout>-->
+        
+        
+    </ContentPage.Content>
+</ContentPage>
