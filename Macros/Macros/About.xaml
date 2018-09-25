@@ -2,28 +2,130 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
              x:Class="Macros.About" Title="About">
     <ContentPage.Content>
-        <StackLayout Margin="20,30,20,20">
-            
-            <Label Text="About Page" HorizontalOptions="Center"
-                 />
-            <Label Text="Developed by Suman Baul" 
-                   HorizontalOptions="Center"
-                 />
+        <ScrollView>
+            <StackLayout HorizontalOptions="FillAndExpand" BackgroundColor="#252330"><!--Main Stack Layout-->
+                <!--Cover/Bg-->
+                <StackLayout HeightRequest="80">
+                    <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                        <Image Source="aboutBg.png" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"></Image>
+                    </AbsoluteLayout>
+                </StackLayout>
 
-            <forms:CarouselView x:Name="HomeCarouselView">
-                <forms:CarouselView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame CornerRadius="10" Margin="10" Padding="0" IsClippedToBounds="True" HasShadow="True">
-                            <!--<Label Text="{Binding .}" FontSize="Medium" />-->
-                            <Image Source="{Binding .}"  Aspect="AspectFill" />
-                        </Frame>
-                    </DataTemplate>
-                </forms:CarouselView.ItemTemplate>
-            </forms:CarouselView>
-            
-        </StackLayout>
-       
+                <!--Author Details-->
+                <StackLayout HorizontalOptions="Start" Margin="0,-60,0,0" Padding="20,20,20,0" Spacing="10" Orientation="Horizontal">
+                    <controls:CircleImage Source="author.png" Aspect="AspectFill" BorderThickness="3" BorderColor="#252330" >
+                        <controls:CircleImage.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="55" Android="70" WinPhone="75"/>
+                        </controls:CircleImage.WidthRequest>
+                    </controls:CircleImage>
+                    <StackLayout Orientation="Vertical" Margin="0,10,0,0">
+                        <Label Text="Suman Baul"
+                         
+                         VerticalOptions="End"
+                         TextColor="White"  
+                       FontFamily="TitilliumWeb-SemiBold.ttf#TitilliumWeb-SemiBold"
+                       FontSize="18"
+                          />
+                        <Label Text="Designed and Developed"
+                         
+                         VerticalOptions="Start"
+                         TextColor="#666666"  
+                       FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                       FontSize="14"
+                          />
+
+                    </StackLayout>
+
+                </StackLayout>
+
+                <!--Main Content-->
+                <Frame CornerRadius="5" Margin="10,5,10,5" Padding="0" IsClippedToBounds="True" HasShadow="True">
+                    
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Center" BackgroundColor="#392a46">
+                        <!--App Icon-->
+                        <StackLayout VerticalOptions="FillAndExpand"
+                             Orientation="Horizontal"
+                             Padding="20,10,0,10"
+                             Spacing="20" BackgroundColor="#392a46">
+                            <Image Source="icon.png"
+                                                WidthRequest="50"
+                                                HeightRequest="50"
+                                                VerticalOptions="Start" />
+
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="FootPrint"
+                                         FontSize="Large"
+                                         VerticalOptions="CenterAndExpand"
+                                         TextColor="White"
+                                         FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                                />
+
+                               
+                            </StackLayout>
+                        </StackLayout>
+                        <!--App Content-->
+                        <ListView x:Name="AboutNavigationList"
+                          RowHeight="55"
+                          SeparatorVisibility="Default" 
+                          SeparatorColor="#6f5383" 
+                          >
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <ViewCell>
+                                        <!-- Main design for our menu items -->
+                                        <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal"
+                                             Padding="20,10,0,10"
+                                             Spacing="20" BackgroundColor="#392a46">
+
+                                            <Image Source="{Binding Icon}"
+                                             WidthRequest="40"
+                                             HeightRequest="40"
+                                             VerticalOptions="Start" />
+                                            <StackLayout Orientation="Vertical">
+                                                <Label Text="{Binding Title}"
+                                                 FontSize="Medium"
+                                                 VerticalOptions="End"
+                                                 TextColor="White"
+                                                 FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                                />
+
+                                                <Label Text="{Binding Details}"
+                                                 FontSize="Small"
+                                                 VerticalOptions="Start"
+                                                 TextColor="#f1f1f1"
+                                                 FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                            />
+                                            </StackLayout>
+                                            <!--<TextCell 
+                                        Text="{Binding Title}" Detail="{Binding Details}"
+                                        FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                        />-->
+                                        </StackLayout>
+                                    </ViewCell>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
+
+                    </StackLayout>
+
+                </Frame>
+
+                <!--<forms:CarouselView x:Name="HomeCarouselView">
+                    <forms:CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame CornerRadius="10" Margin="10" Padding="0" IsClippedToBounds="True" HasShadow="True">
+                                <Label Text="{Binding .}" FontSize="Medium" />
+                                <Image Source="{Binding .}"  Aspect="AspectFill" />
+                            </Frame>
+                        </DataTemplate>
+                    </forms:CarouselView.ItemTemplate>
+                </forms:CarouselView>-->
+
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

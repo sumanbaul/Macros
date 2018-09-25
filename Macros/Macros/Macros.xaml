@@ -1,12 +1,80 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Macros.Macros">
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             x:Class="Macros.Macros"
+             Title="Macronutrients">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView x:Name="HomeScroll" BackgroundColor="#392a46" >
+            <StackLayout Orientation="Vertical">
+
+                <StackLayout  Padding="5,0,5,0" HorizontalOptions="CenterAndExpand">
+                    <!--<controls:CircleImage Source="author.png" Aspect="AspectFill" BorderThickness="3" BorderColor="#252330" >
+                        <controls:CircleImage.WidthRequest>
+                            <OnPlatform x:TypeArguments="x:Double" iOS="55" Android="70" WinPhone="75"/>
+                        </controls:CircleImage.WidthRequest>
+                    </controls:CircleImage>-->
+                    <StackLayout Orientation="Vertical" Padding="0,5,0,0">
+                        <Label Text="Daily Consupmtion in grams"
+                                            VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+                                            FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                           TextColor="White" FontSize="22" FontAttributes="Bold" XAlign="Center" />
+                    </StackLayout>
+                    
+                    
+                    <StackLayout Orientation="Horizontal" Padding="0,5,0,0">
+
+                        <Frame CornerRadius="50" Margin="0,0,-20, 0" Padding="1" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="#7261a3" IsClippedToBounds="True">
+                                <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" IsClippedToBounds="True">
+                                    <Label x:Name="labelFat"  VerticalOptions="End" HorizontalOptions="Center" FontFamily="TitilliumWeb-SemiBold.ttf#TitilliumWeb-SemiBold"
+                                           TextColor="White" FontSize="30" FontAttributes="Bold" XAlign="Center" />
+                                    <Label VerticalOptions="Start" HorizontalOptions="Center" FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" TextColor="White" FontSize="17"  Text="Fats" XAlign="Center" />
+                                </StackLayout>
+
+                            </Frame>
+
+
+
+                        <Frame CornerRadius="75" Margin="0" Padding="0" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#42345a">
+                            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+                                <Label x:Name="labelProtein"  VerticalOptions="End" HorizontalOptions="Center" FontFamily="TitilliumWeb-SemiBold.ttf#TitilliumWeb-SemiBold"
+                                           TextColor="White" FontSize="35" FontAttributes="Bold" XAlign="Center" />
+                                <Label VerticalOptions="Start" HorizontalOptions="Center" FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" TextColor="White" FontSize="20"  Text="Proteins" XAlign="Center" />
+                            </StackLayout>
+
+                        </Frame>
+                        <Frame CornerRadius="50" Margin="-20,0,0, 0" Padding="0" HeightRequest="100" WidthRequest="100" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#a67db8">
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+                                <Label x:Name="labelCarbs"  VerticalOptions="End" HorizontalOptions="Center" FontFamily="TitilliumWeb-SemiBold.ttf#TitilliumWeb-SemiBold"
+                                           TextColor="White" FontSize="30" FontAttributes="Bold" XAlign="Center" />
+                                <Label VerticalOptions="Start" HorizontalOptions="Center" FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" TextColor="White" FontSize="17"  Text="Carbs" XAlign="Center" />
+                            </StackLayout>
+
+                        </Frame>
+                    </StackLayout>
+                    
+                </StackLayout>
+
+                
+                <StackLayout  Padding="0,5,0,5" HorizontalOptions="CenterAndExpand">
+                   
+                    <!--<Frame CornerRadius="5" Padding="0" Margin="0" IsClippedToBounds="True" HasShadow="True">-->
+                        <StackLayout Orientation="Horizontal" Spacing="5">
+                        <Button Text="Gain Muscle" Clicked="btnGainWeight" x:Name="GainWeight" BackgroundColor="#FCA311" TextColor="#6A552E" FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" />
+                        <Button Text="Maintain"  Clicked="btnMaintainWeight" x:Name="MaintainWeight" BackgroundColor="#D4A0A7" TextColor="#56505D"  FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" />
+                        <Button Text="Lose Weight" Clicked="btnLoseWeight" x:Name="LoseWeight" BackgroundColor="#C84630" TextColor="#ECC1B9" FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" />
+                        </StackLayout>
+                    <!--</Frame>-->
+
+                    <Label Text="Choose your Goals"
+                                            VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+                                            FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                           TextColor="White" FontSize="18" XAlign="Center" />
+                    
+                </StackLayout>
+                
+                
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

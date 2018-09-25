@@ -16,6 +16,16 @@ namespace Macros
 
         public float age { get; set; }
 
+        public float activityLevels { get; set; }
+
         public float bmrValue { get; set; }
+
+        public float bmiValue { get; set; }
+
+        public float FatPercentageValue { get; set; }
+
+        public DateTime Date { get; set; }
+
+        //public string user { get; set; }
     }
 }

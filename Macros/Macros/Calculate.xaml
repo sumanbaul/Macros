@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Macros.Calculate" 
+             Title="Calculate"
+             >
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout
+                     Margin="0,0,0,0"
+                     Padding="10"
+                     >
+
+                <Picker x:Name="Gender" Title="Choose your gender:"
+                VerticalOptions="Center"
+                         TextColor="#212121"
+                >
+                    <Picker.Items>
+                        <x:String>Male</x:String>
+                        <x:String>Female</x:String>
+                    </Picker.Items>
+                </Picker>
+
+
+                <Entry  x:Name="Weight" Placeholder="Enter your weight (in kilos)" PlaceholderColor="#757575" TextColor="#212121"  Keyboard="Numeric" VerticalOptions="Center">
+                </Entry>
+
+                <Picker x:Name="HeightO" Title="Choose your height type"
+                VerticalOptions="Center"
+                 TextColor="#212121"
+                >
+                    <Picker.Items>
+                        <x:String>Feet</x:String>
+                        <x:String>Centi-meters</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry  x:Name="Height" Placeholder="Enter your height"  Keyboard="Numeric" TextColor="#212121" ></Entry>
+                <!--<Label Text="Your Age" VerticalOptions="Center"></Label>-->
+                <Entry  x:Name="Age" Placeholder="Age (in years)" Keyboard="Numeric" TextColor="#212121">
+                </Entry>
+
+                <Picker x:Name="Activity" Title="Choose your activity level:"
+                VerticalOptions="Center"
+                         TextColor="#212121"
+                >
+                    <Picker.Items>
+                        <x:String>No Activity</x:String>
+                        <x:String>Light Activity</x:String>
+                        <x:String>Moderate Activity</x:String>
+                        <x:String>Very Active</x:String>
+                        <x:String>Extra Active</x:String>
+                    </Picker.Items>
+                </Picker>
+                <!--<DatePicker>
+                
+            </DatePicker>-->
+
+                <Button Text="Calculate" BackgroundColor="#f16d6a" BorderColor="#bc4f4d" BorderWidth="1" TextColor="#fafafa" Clicked="Calculate_Clicked" ></Button>
+                <Button x:Name="ResetButton" Text="Reset" BackgroundColor="#607D8B" BorderColor="#1b5366" TextColor="#fafafa" Clicked="ResetButton_Clicked" IsVisible="False" ></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

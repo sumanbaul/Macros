@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Macros.Android", "Macros\Ma
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Macros.iOS", "Macros\Macros.iOS\Macros.iOS.csproj", "{ACFCB1D0-F248-4859-ABFD-1A4912BCF585}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Macros", "Macros\Macros\Macros.csproj", "{94520478-CD21-49A3-9246-9FF3BD05F77E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Macros", "Macros\Macros\Macros.csproj", "{94520478-CD21-49A3-9246-9FF3BD05F77E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

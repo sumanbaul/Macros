@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Reflection.Emit;
 using Macros;
 using Xamarin.Forms;
 
@@ -15,14 +16,16 @@ namespace Macros
 		{
 			InitializeComponent();
 
-            MainPage = new MenuPage();
+            //MainPage = new MenuPage();
+            MainPage = new NavigationPage(new Splash.splash());
 		}
 
         public App(string DB_Path)
         {
             InitializeComponent();
             DB_PATH = DB_Path;
-            MainPage = new MenuPage();
+            //MainPage = new MenuPage();
+            MainPage = new NavigationPage(new Splash.splash());
         }
 
 		protected override void OnStart ()

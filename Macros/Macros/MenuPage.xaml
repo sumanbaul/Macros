@@ -3,41 +3,93 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Macros.MenuPage"
              xmlns:pages="clr-namespace:Macros"
-                  Title="I am Master" MasterBehavior="Popover">
+                  Title="I am Master" MasterBehavior="Split">
   <MasterDetailPage.Master>
-        <ContentPage BackgroundColor="#1b5366" Title="Dash">
-            <ContentPage.Content>
-                <StackLayout Margin="0">
-                    <!--<Label Text="Macros" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#fafafa"></Label>-->
+        <ContentPage BackgroundColor="#25232e" Title="Menu">
+            
+                <!--<StackLayout Margin="0">
+                    --><!--<Label Text="Macros" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#fafafa"></Label>--><!--
 
                     <Image x:Name="MenuBannerImage" Source="Banner.png" HeightRequest="100" Aspect="AspectFill"></Image>
-                    
-                    <!--<BoxView HeightRequest="1" BackgroundColor="#000"></BoxView>-->
-                    <Button Text="BMR" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="Handle_Clicked" TextColor="#fafafa"></Button>
 
-                    <Button Text="About" BackgroundColor="Transparent" Clicked="Handle_Clicked2" TextColor="#fafafa"></Button>
+                    <Button Text="Home" BackgroundColor="Transparent" Clicked="HomePage_Clicked" TextColor="#fafafa"></Button>
+                    
+                    <Button Text="Calculate" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="Calculate_Clicked" TextColor="#fafafa"></Button>
+
+                    --><!--<Button Text="BMR" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="Handle_Clicked" TextColor="#fafafa"></Button>--><!--
 
                     <Button Text="Data" BackgroundColor="Transparent" Clicked="DBPage_Clicked" TextColor="#fafafa"></Button>
-                    
-                    <Button Text="Home" BackgroundColor="Transparent" Clicked="HomePage_Clicked" TextColor="#fafafa"></Button>
 
-                </StackLayout>
-            </ContentPage.Content>
+                    <Button Text="Settings" BackgroundColor="Transparent" Clicked="Settings_Clicked" TextColor="#fafafa"></Button>
+                    
+                    <Button Text="About" BackgroundColor="Transparent" Clicked="Handle_Clicked2" TextColor="#fafafa"></Button>
+
+                </StackLayout>-->
+
+                <StackLayout Orientation="Vertical">
+
+                    <!-- 
+             This StackLayout you can use for other
+             data that you want to have in your menu drawer
+        -->
+                <StackLayout>
+                        <!--<Label Text="{Binding Header}" />-->
+
+                    <Image Source="{Binding Image}"  HeightRequest="100" Aspect="AspectFill"/>
+
+                    <Label Text="{Binding Footer}" TextColor="White" Margin="20,5,5,5" FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" />
+                    </StackLayout>
+                    
+                    <ListView x:Name="navigationDrawerList"
+                  RowHeight="55"
+                  SeparatorVisibility="Default" 
+                  SeparatorColor="#6f5383" 
+                  ItemSelected="OnMenuItemSelected">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+
+                                    <!-- Main design for our menu items -->
+                                <StackLayout VerticalOptions="FillAndExpand"
+                             Orientation="Horizontal"
+                             Padding="20,10,0,10"
+                             Spacing="20" BackgroundColor="#25232e">
+
+                                    <Image Source="{Binding Icon}"
+                                         WidthRequest="40"
+                                         HeightRequest="40"
+                                         VerticalOptions="Start" />
+
+                                    <Label Text="{Binding Title}"
+                                         FontSize="Small"
+                                         VerticalOptions="Center"
+                                         TextColor="White"
+                                         FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                    />        
+                                </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                <Label x:Name="versionLabel" Margin="20" TextColor="#696676" XAlign="Center" FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" />
+            </StackLayout>
+
+            
+            
         </ContentPage>
     <!--<pages:MenuPageMaster x:Name="MasterPage" />-->
   </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
-    <!--<NavigationPage>
-      <x:Arguments>
-        <pages:MenuPageDetail />
-      </x:Arguments>
-    </NavigationPage>-->
-        <ContentPage Padding="10" BackgroundColor="#fafafa">
+        <NavigationPage>
+
+        </NavigationPage>
+        <!--<ContentPage Padding="10" BackgroundColor="#fafafa">
             <ContentPage.Content>
                 <StackLayout Margin="5,30,5,5">
                     <Label Text="Dash" />
                 </StackLayout>
             </ContentPage.Content>
-        </ContentPage>
+        </ContentPage>-->
     </MasterDetailPage.Detail>
 </MasterDetailPage>
