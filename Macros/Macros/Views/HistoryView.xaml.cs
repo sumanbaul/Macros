@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using SkiaSharp;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using Entry = Microcharts.Entry;
 using Microcharts;
 
 namespace Macros
@@ -23,7 +21,7 @@ namespace Macros
 
         //List<Entry> entries = new List<Entry>()
         //{
-            
+
 
         //    new Entry(200)
         //    {
@@ -45,6 +43,8 @@ namespace Macros
         //    }
         //};
 
+        public string UserWeight { get; set; }
+        public string UserDate { get; set; }
 
         public DisplayData ()
 		{
@@ -63,16 +63,21 @@ namespace Macros
                 var bmr = conn.Table<BMR>().ToList();
                 //BMRView.ItemsSource = bmr;
                 
-                List<Entry> entries = new List<Entry>();
+                
+                List<Microcharts.ChartEntry> entries = new List<Microcharts.ChartEntry>();
+                //string[] color = { "#00CDE1", "#C71585", "f2db68", "f2db68" };
                 //int count = 0;
+                var random = new Random();
+                var color = "";
+                
                 foreach (var element in bmr)
                 {
-                    Entry data = new Entry(element.bmiValue);
-                    data.ValueLabel = element.bmrValue.ToString("0");
-                    data.Label = element.Date.ToString("MMMM");
-                    data.Color = SKColor.Parse("#00CDE1");
+                    Microcharts.ChartEntry data = new Microcharts.ChartEntry(element.BmiValue);
+                    data.ValueLabel = element.BmrValue.ToString("0");
+                    data.Label = element.Date.Date.ToString("MMMM");
+                    data.Color = SKColor.Parse(color = String.Format("#{0:X6}", random.Next(0x1000000)));
                     entries.Add(data);
-
+                    element.FatPercentageValue.ToString("0.00 %");
                     //entries[bmr.Count] = new Entry(bmr.Count) {
                     //    Color = SKColor.Parse("#00CDE1"),
                     //    Label = "April",
@@ -80,12 +85,12 @@ namespace Macros
                     //};
 
                     BMRView.ItemsSource = bmr;
-
+                    UserWeight = element.Weight.ToString();
+                    UserDate = element.Date.Date.ToString("DD/MM/YY");
                     
-
-
+                    
                 }
-                DataChart.Chart = new LineChart { Entries = entries };
+                DataChart.Chart = new DonutChart { Entries = entries };
                 //string strserialize = JsonConvert.SerializeObject(bmr);
             };
         }

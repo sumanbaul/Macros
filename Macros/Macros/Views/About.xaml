@@ -68,7 +68,7 @@
                         </StackLayout>
                         <!--App Content-->
                         <ListView x:Name="AboutNavigationList"
-                          RowHeight="55"
+                          RowHeight="65"
                           SeparatorVisibility="Default" 
                           SeparatorColor="#6f5383" 
                           >

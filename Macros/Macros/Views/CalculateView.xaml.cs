@@ -17,7 +17,7 @@ namespace Macros
 			InitializeComponent ();
 		}
 
-        private void Calculate_Clicked(object sender, EventArgs e)
+        private async void  Calculate_Clicked(object sender, EventArgs e)
         {
             try
             {
@@ -47,11 +47,11 @@ namespace Macros
 
                 if (Weight.Text == null || Height.Text == null || Age.Text == null)
                 {
-                    DisplayAlert("Failed", "No values were inserted. Enter values and try again.", "Close");
+                   await DisplayAlert("Failed", "No values were inserted. Enter values and try again.", "Close");
                 }
                 else if (float.Parse(Weight.Text) < 24 || float.Parse(Height.Text) < 3.5 || float.Parse(Age.Text) < 17)
                 {
-                    DisplayAlert("Failed", "Inserted values are less than the minimum amount needed for survival.", "Close");
+                    await DisplayAlert("Failed", "Inserted values are less than the minimum amount needed for survival.", "Close");
                 }
                 else
                 {
@@ -77,27 +77,28 @@ namespace Macros
                     var Calculate = new BMR();
 
                     //weight = float.Parse(Weight.Text); //Kilos
-                    Calculate.weight = (float)(float.Parse(Weight.Text) * 2.2); //Lbs
-                    Calculate.height = HeightValue;
-                    Calculate.age = float.Parse(Age.Text);
+                    Calculate.Weight = (float)(float.Parse(Weight.Text) * 2.2); //Lbs
+                    Calculate.Height = HeightValue;
+                    Calculate.Age = float.Parse(Age.Text);
                     Calculate.Date = DateTime.Today;
-                    Calculate.activityLevels = activityLevel;
-                    Calculate.bmiValue = (float)(Calculate.weight / (Math.Pow(Calculate.height, 2))) * 703;
+                    Calculate.ActivityLevels = activityLevel;
+                    Calculate.BmiValue = (float)(Calculate.Weight / (Math.Pow(Calculate.Height, 2))) * 703;
+                    
 
                     if (Gender.Items[Gender.SelectedIndex] == "Male")
                     {
                         //BMRValue = (float)( 10 * Bmr.weight + 6.25 * Bmr.height - 5 * Bmr.age + 5); //old
-                        FatPercentage = (float)((1.20 * Calculate.bmiValue) + (0.23 * Calculate.age) - 16.2);
-                        BMRValue = (float)(66 + (Calculate.weight * 6.23) + (12.7 * Calculate.height) - (6.8 * Calculate.age));
+                        FatPercentage = (float)((1.20 * Calculate.BmiValue) + (0.23 * Calculate.Age) - 16.2);
+                        BMRValue = (float)(66 + (Calculate.Weight * 6.23) + (12.7 * Calculate.Height) - (6.8 * Calculate.Age));
                     }
                     else
                     {
                         //BMRValue = (float)(10 * Bmr.weight + 6.25 * Bmr.height - 5 * Bmr.age) ;
-                        FatPercentage = (float)((1.20 * Calculate.bmiValue) + (0.23 * Calculate.age) - 5.4);
-                        BMRValue = (float)(655 + (Calculate.weight * 4.35) + (4.7 * Calculate.height) - (4.7 * Calculate.age));
+                        FatPercentage = (float)((1.20 * Calculate.BmiValue) + (0.23 * Calculate.Age) - 5.4);
+                        BMRValue = (float)(655 + (Calculate.Weight * 4.35) + (4.7 * Calculate.Height) - (4.7 * Calculate.Age));
                     }
 
-                    Calculate.bmrValue = BMRValue;
+                    Calculate.BmrValue = BMRValue;
                     Calculate.FatPercentageValue = FatPercentage;
 
 
@@ -112,11 +113,13 @@ namespace Macros
 
                         if (NumberOfRows > 0)
                         {
-                            DisplayAlert("Success", "DB Insertion successful", "exit");
+                            //DisplayAlert("Success", "DB Insertion successful", "exit");
+                            var newPage = new HomePage();
+                            await Navigation.PushAsync(newPage);
                         }
                         else
                         {
-                            DisplayAlert("failure", "DB insertion failed", "exit");
+                           await DisplayAlert("failure", "DB insertion failed", "exit");
                         }
                     }
 
@@ -128,7 +131,7 @@ namespace Macros
 
             catch (Exception ex)
             {
-                DisplayAlert("Failed", ex.ToString(), "Close");
+                await DisplayAlert("Failed", ex.ToString(), "Close");
             }
         }
 

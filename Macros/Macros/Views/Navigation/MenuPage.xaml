@@ -3,35 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Macros.MenuPage"
              xmlns:pages="clr-namespace:Macros"
-                  Title="I am Master" MasterBehavior="Split">
+             Title="I am Master" MasterBehavior="Split">
   <MasterDetailPage.Master>
         <ContentPage BackgroundColor="#25232e" Title="Menu">
             
-                <!--<StackLayout Margin="0">
-                    --><!--<Label Text="Macros" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" TextColor="#fafafa"></Label>--><!--
-
-                    <Image x:Name="MenuBannerImage" Source="Banner.png" HeightRequest="100" Aspect="AspectFill"></Image>
-
-                    <Button Text="Home" BackgroundColor="Transparent" Clicked="HomePage_Clicked" TextColor="#fafafa"></Button>
-                    
-                    <Button Text="Calculate" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="Calculate_Clicked" TextColor="#fafafa"></Button>
-
-                    --><!--<Button Text="BMR" BackgroundColor="Transparent" BorderColor="Transparent" Clicked="Handle_Clicked" TextColor="#fafafa"></Button>--><!--
-
-                    <Button Text="Data" BackgroundColor="Transparent" Clicked="DBPage_Clicked" TextColor="#fafafa"></Button>
-
-                    <Button Text="Settings" BackgroundColor="Transparent" Clicked="Settings_Clicked" TextColor="#fafafa"></Button>
-                    
-                    <Button Text="About" BackgroundColor="Transparent" Clicked="Handle_Clicked2" TextColor="#fafafa"></Button>
-
-                </StackLayout>-->
-
                 <StackLayout Orientation="Vertical">
 
-                    <!-- 
-             This StackLayout you can use for other
-             data that you want to have in your menu drawer
-        -->
+                            <!-- 
+                     This StackLayout you can use for other
+                     data that you want to have in your menu drawer
+                -->
                 <StackLayout>
                         <!--<Label Text="{Binding Header}" />-->
 
@@ -84,12 +65,5 @@
         <NavigationPage>
 
         </NavigationPage>
-        <!--<ContentPage Padding="10" BackgroundColor="#fafafa">
-            <ContentPage.Content>
-                <StackLayout Margin="5,30,5,5">
-                    <Label Text="Dash" />
-                </StackLayout>
-            </ContentPage.Content>
-        </ContentPage>-->
     </MasterDetailPage.Detail>
 </MasterDetailPage>

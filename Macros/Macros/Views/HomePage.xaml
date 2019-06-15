@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Macros.HomePage"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+
+             Title="Footprint"
+             >
+    <ContentPage.Content>
+      
+        <ScrollView x:Name="DashBoardV" BackgroundColor="#322b3d">
+
+
+          <!--StackLayout Orientation="Vertical"  x:Name="CalculateBtnView">
+            <StackLayout Orientation="Horizontal" Padding="5,10,5,0" HorizontalOptions="CenterAndExpand">
+
+              <Button x:Name="BtnCalculate" Text="Calculate Your Footprint"  HorizontalOptions="CenterAndExpand" BackgroundColor="#f16d6a" BorderColor="#bc4f4d" BorderWidth="1" TextColor="#fafafa" Clicked="Calculate_Clicked" ></Button>
+
+            </StackLayout>
+          </StackLayout>-->
+          <StackLayout Orientation="Vertical"  x:Name="DashBoardView">
+              <StackLayout Orientation="Horizontal" Padding="5,10,5,5" HeightRequest="160" HorizontalOptions="CenterAndExpand" >
+
+
+                <Frame CornerRadius="5" Margin="5" Padding="0" IsClippedToBounds="True" HasShadow="True">
+                  <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Image Source="bg1.png" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"></Image>
+
+                    <StackLayout  Padding="35,35,10,10" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+
+
+
+                      <Label Text="B.M.R"
+                                   HorizontalTextAlignment="Center"
+                                  VerticalTextAlignment="Center"
+                                  FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                 TextColor="White" FontSize="22"
+                                  XAlign="Center"
+                                        
+                                         HorizontalOptions="Center"
+                                         VerticalOptions="Center"
+                                       />
+
+                      <Label Text="{Binding BMRValue}"
+                                   HorizontalTextAlignment="Center"
+                                  VerticalTextAlignment="Center"
+                                  FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                 TextColor="White" FontSize="30" x:Name="BMRResult"
+                                  XAlign="Center"/>
+                      <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Calculate_Tapped" NumberOfTapsRequired="1" />
+                      </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                  </AbsoluteLayout>
+                </Frame>
+
+                <Frame CornerRadius="5" Margin="5" Padding="0" IsClippedToBounds="True" HasShadow="True">
+                  <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Image Source="bg2.png" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"></Image>
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="35,65,0,0">
+
+                      <Label Text="Macros"
+                                  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+                                  FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                 TextColor="White" FontSize="30"/>
+                      <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Macros_Tapped" NumberOfTapsRequired="1" />
+                      </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                  </AbsoluteLayout>
+                </Frame>
+              </StackLayout>
+
+
+              <StackLayout  Padding="5,0,5,5" HeightRequest="205" HorizontalOptions="CenterAndExpand">
+                <Frame CornerRadius="5" Margin="5,0,5,5" Padding="0" IsClippedToBounds="True" HasShadow="True">
+                  <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Image Source="fatPercentageBg.png" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"></Image>
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="85,25,0,0" x:Name="FatPercent">
+
+                      <Label Text="{Binding FatPercentageValue}"
+                                  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+                                  FontFamily="TitilliumWeb-SemiBold.ttf#TitilliumWeb-SemiBold"
+                                 TextColor="White" FontSize="55" FontAttributes="Bold" x:Name="FPer" XAlign="Center" />
+                      <Label Text="Fat percentage"
+                                  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+                                  FontFamily="TitilliumWeb-SemiBold.ttf#TitilliumWeb-SemiBold"
+                                 TextColor="White" FontSize="25" FontAttributes="Bold" XAlign="Center" />
+                      <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Calculate_Tapped" NumberOfTapsRequired="1" />
+                      </StackLayout.GestureRecognizers>
+
+                    </StackLayout>
+
+                  </AbsoluteLayout>
+                </Frame>
+              </StackLayout>
+
+
+              <StackLayout  Padding="5,0,5,5" HeightRequest="205" HorizontalOptions="CenterAndExpand">
+                <Frame CornerRadius="5" Margin="5,0,5,5" Padding="0" IsClippedToBounds="True" HasShadow="True">
+                  <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <Image Source="bmiBG.png" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"></Image>
+                    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Padding="85,50,0,0" x:Name="FatPercentage">
+
+                      <Label Text="{Binding BMIValue}"
+                                  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+                                  FontFamily="TitilliumWeb-SemiBold.ttf#TitilliumWeb-SemiBold" XAlign="Center"
+                                 TextColor="White" FontSize="55" FontAttributes="Bold" x:Name="BMIResult"  />
+                      <Label Text="Body Mass Index"
+                                  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" HorizontalOptions="Center" VerticalOptions="Center"
+                                  FontFamily="TitilliumWeb-SemiBold.ttf#TitilliumWeb-SemiBold" XAlign="Center"
+                                 TextColor="White" FontSize="25" FontAttributes="Bold" />
+                      <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Calculate_Tapped" NumberOfTapsRequired="1" />
+                      </StackLayout.GestureRecognizers>
+
+                    </StackLayout>
+
+                  </AbsoluteLayout>
+                </Frame>
+              </StackLayout>
+                <StackLayout>
+                    <!--<CollectionView x:Name="FooterCarousel" 
+                    ItemsSource="{Binding Names}" 
+                    Margin="10,0,0,0">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout HeightRequest="50" WidthRequest="200" Orientation="Horizontal" Padding="0,5,0,5">
+                                    --><!--<Image Source="person"/>--><!--
+                                    <Label Text="{Binding}" VerticalOptions="Center"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>-->
+                </StackLayout>
+                <StackLayout Margin="5,0,5,5"  Padding="5,0,5,10" HorizontalOptions="EndAndExpand">
+
+                    <cv:CarouselViewControl x:Name="Carousel" Orientation="Horizontal" Position="{Binding SelectedIndex}" HeightRequest="60" >
+                       
+                            
+                        
+                        <cv:CarouselViewControl.ItemTemplate>
+                            
+                            <DataTemplate>
+                                
+                                <ContentView>
+                                    
+                                    <Frame CornerRadius="10" Margin="0" Padding="0" IsClippedToBounds="True" BackgroundColor="Black">
+                                        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                                            <Image Source="ViewPager.png" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"></Image>
+                                            <StackLayout  HorizontalOptions="CenterAndExpand" Padding="8">
+                                                <Label Text="{Binding .}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                                   
+                            FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                           TextColor="White" FontSize="20"
+                                                       
+                                                       />   
+                                            </StackLayout>
+
+                                            <Image Source="{Binding .}"  Aspect="AspectFill" />
+                                        </AbsoluteLayout>
+                                    </Frame>
+                                    
+                                   
+                                </ContentView>
+                                
+
+
+                            </DataTemplate>
+                        </cv:CarouselViewControl.ItemTemplate>
+                    </cv:CarouselViewControl>
+
+                    <!--<cv:CarouselViewControl x:Name="myCarousel" BindingContext="{Binding Person}">
+                        <cv:CarouselViewControl.ItemsSource>
+                            <x:Array Type="{x:Type View}">
+
+                                --><!-- Page1 Display Photo --><!--
+                                <Image Source="{Binding PhotoUrl}"/>
+
+                                --><!-- Page2 Display Bio --><!--
+                                <Label FormattedString="{Binding Bio}"/>
+
+                                --><!-- Page2 Display contact information --><!--
+                                <Label FormattedString="{Binding Info}"/>
+
+                            </x:Array>
+                        </cv:CarouselViewControl.ItemsSource>
+                    </cv:CarouselViewControl>-->
+
+
+                    <!--<CarouselView x:Name="FooterCarousel" ItemsSource="{Binding Names}">
+                        <CarouselView.ItemsLayout>
+                            <GridItemsLayout Orientation="Horizontal" SnapPointsAlignment="Center" SnapPointsType="Mandatory"/>
+                        </CarouselView.ItemsLayout>
+                        <CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame CornerRadius="5" Margin="15" Padding="0" IsClippedToBounds="True" HasShadow="False">
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="*"/>
+                                            <ColumnDefinition Width="*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Image Grid.Column="0" Grid.Row="0" Source="ViewPager.png" VerticalOptions="FillAndExpand"/>
+                                        <StackLayout Grid.Column="1" Grid.Row="1" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
+                                            <Label Text="{Binding}"
+                                                    VerticalTextAlignment="Center"
+                                                    HorizontalTextAlignment="Center"
+                                                    HorizontalOptions="Center"
+                                                    VerticalOptions="Center"   
+                                                    FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                                                    TextColor="White" FontSize="20"/>
+
+                                        </StackLayout>
+                                    </Grid>
+
+
+                                    
+                                </Frame>
+                            </DataTemplate>
+                        </CarouselView.ItemTemplate>
+                    </CarouselView>-->
+                    <!--<CarouselView x:Name="FooterCarousel" >
+                  <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                      <Frame CornerRadius="5" Margin="15" Padding="0" IsClippedToBounds="True">
+                        <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                          <Image Source="ViewPager.png" AbsoluteLayout.LayoutBounds="1,1,1,1" AbsoluteLayout.LayoutFlags="All" Aspect="AspectFill"></Image>
+                          <StackLayout  HorizontalOptions="CenterAndExpand" Padding="8">
+                            <Label Text="{Binding .}"
+                                   VerticalTextAlignment="Center"
+                                   HorizontalTextAlignment="Center"
+                                   HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                                   
+                            FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
+                           TextColor="White" FontSize="20"/>
+                          </StackLayout>
+
+                          <Image Source="{Binding .}"  Aspect="AspectFill" />
+                        </AbsoluteLayout>
+                      </Frame>
+                    </DataTemplate>
+                  </CarouselView.ItemTemplate>
+                </CarouselView>-->
+              </StackLayout>
+              
+            </StackLayout>
+          
+         </ScrollView>
+        
+        
+    </ContentPage.Content>
+</ContentPage>

@@ -78,9 +78,25 @@ namespace Macros
             AboutNavigationList.ItemsSource = AboutMenuList;
         }
 
+        public bool IsGestureEnabled { get; private set; }
+
         //private void AboutNavigationList_ItemSelected(System.Object sender, Xamarin.Forms.SelectedItemChangedEventArgs e)
         //{
 
         //}
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            //your code here;
+            IsGestureEnabled = true;
+        }
+
+        protected override void OnDisappearing()
+        {
+            base.OnAppearing();
+            //your code here;
+            IsGestureEnabled = false;
+        }
+
     }
 }

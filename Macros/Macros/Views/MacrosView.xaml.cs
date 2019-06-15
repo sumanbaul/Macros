@@ -30,10 +30,10 @@ namespace Macros
                 float BMRVal = 0;
                 foreach (BMR data in bmr)
                 {
-                    weight = data.weight;
+                    weight = data.Weight;
                     //BMIVal = fat.bmiValue.ToString("0.00");
-                    BMRVal = data.bmrValue;
-                    activityLvl = data.activityLevels;
+                    BMRVal = data.BmrValue;
+                    activityLvl = data.ActivityLevels;
                 }
 
                 
@@ -114,10 +114,10 @@ namespace Macros
                 float BMRVal = 0;
                 foreach (BMR data in bmr)
                 {
-                    weight = data.weight;
+                    weight = data.Weight;
                     //BMIVal = fat.bmiValue.ToString("0.00");
-                    BMRVal = data.bmrValue;
-                    activityLvl = data.activityLevels;
+                    BMRVal = data.BmrValue;
+                    activityLvl = data.ActivityLevels;
                 }
 
 
@@ -153,10 +153,10 @@ namespace Macros
                 float BMRVal = 0;
                 foreach (BMR data in bmr)
                 {
-                    weight = data.weight;
+                    weight = data.Weight;
                     //BMIVal = fat.bmiValue.ToString("0.00");
-                    BMRVal = data.bmrValue;
-                    activityLvl = data.activityLevels;
+                    BMRVal = data.BmrValue;
+                    activityLvl = data.ActivityLevels;
                 }
 
 
@@ -190,10 +190,10 @@ namespace Macros
                 float BMRVal = 0;
                 foreach (BMR data in bmr)
                 {
-                    weight = data.weight;
+                    weight = data.Weight;
                     //BMIVal = fat.bmiValue.ToString("0.00");
-                    BMRVal = data.bmrValue;
-                    activityLvl = data.activityLevels;
+                    BMRVal = data.BmrValue;
+                    activityLvl = data.ActivityLevels;
                 }
 
 

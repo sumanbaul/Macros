@@ -7,6 +7,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using System.IO;
+using Xamarin.Forms;
+
 //using FootPrint.Droid;
 
 namespace Macros.Droid
@@ -20,6 +22,9 @@ namespace Macros.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
+
+            //global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
+
 
             string fileName = "footprint_db.sqlite";
             string fileLocation = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);

@@ -11,29 +11,34 @@
                      Padding="10"
                      >
 
-                <Picker x:Name="Gender" Title="Choose your gender:"
+               
+
+
+                                    <Picker x:Name="Gender" Title="Choose your gender:"
                 VerticalOptions="Center"
                          TextColor="#212121"
                 >
-                    <Picker.Items>
-                        <x:String>Male</x:String>
-                        <x:String>Female</x:String>
-                    </Picker.Items>
-                </Picker>
-
-
+                                        <Picker.Items>
+                                            <x:String>Male</x:String>
+                                            <x:String>Female</x:String>
+                                        </Picker.Items>
+                                    </Picker>
+                                        
+                              
                 <Entry  x:Name="Weight" Placeholder="Enter your weight (in kilos)" PlaceholderColor="#757575" TextColor="#212121"  Keyboard="Numeric" VerticalOptions="Center">
                 </Entry>
-
-                <Picker x:Name="HeightO" Title="Choose your height type"
-                VerticalOptions="Center"
-                 TextColor="#212121"
-                >
-                    <Picker.Items>
-                        <x:String>Feet</x:String>
-                        <x:String>Centi-meters</x:String>
-                    </Picker.Items>
-                </Picker>
+                
+                                    <Picker x:Name="HeightO" Title="Choose your height type"
+                                        VerticalOptions="Center"
+                                         TextColor="#212121"
+                                        >               
+                                        <Picker.Items>
+                                            <x:String>Feet</x:String>
+                                            <x:String>Centi-meters</x:String>
+                                        </Picker.Items>
+                                    </Picker>
+                              
+               
                 <Entry  x:Name="Height" Placeholder="Enter your height"  Keyboard="Numeric" TextColor="#212121" ></Entry>
                 <!--<Label Text="Your Age" VerticalOptions="Center"></Label>-->
                 <Entry  x:Name="Age" Placeholder="Age (in years)" Keyboard="Numeric" TextColor="#212121">

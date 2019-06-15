@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Macros.Droid</RootNamespace>
     <AssemblyName>Macros.Android</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -27,13 +27,16 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <BundleAssemblies>false</BundleAssemblies>
+    <AndroidSupportedAbis />
+    <EnableProguard>true</EnableProguard>
+    <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugSymbols>false</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
@@ -44,9 +47,8 @@
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <BundleAssemblies>false</BundleAssemblies>
-    <AndroidLinkMode>Full</AndroidLinkMode>
-    <AndroidSupportedAbis>
-    </AndroidSupportedAbis>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidSupportedAbis />
     <EnableProguard>true</EnableProguard>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <JavaMaximumHeapSize>1G</JavaMaximumHeapSize>
@@ -60,8 +62,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CarouselView.FormsPlugin">
+      <Version>5.2.0</Version>
+    </PackageReference>
     <PackageReference Include="Microcharts.Forms">
-      <Version>0.8.3-pre</Version>
+      <Version>0.8.5-pre</Version>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json">
       <Version>11.0.2</Version>
@@ -72,23 +77,13 @@
     <PackageReference Include="Xam.Plugins.Android.InfiniteCycleViewPager">
       <Version>1.0.2</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.v4">
-      <Version>25.4.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Auth">
-      <Version>1.6.0.2</Version>
-    </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="2.5.1.444934" />
-    <PackageReference Include="Xamarin.Android.Support.Design" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="25.4.0.2" />
-    <PackageReference Include="Xamarin.Forms.CarouselView">
-      <Version>2.3.0-pre2</Version>
-    </PackageReference>
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
+    <!-- <PackageReference Include="Xamarin.Android.Support.Design" Version="25.4.0.2" /> -->
+    <!-- <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="25.4.0.2" /> -->
+    <!-- <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="25.4.0.2" /> -->
+    <!-- <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="25.4.0.2" /> -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomUrlSchemeInterceptorActivity.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -252,19 +247,7 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\aboutBg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\containerBg3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\containerBgGradient.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\containerBg1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\containerBg2.png" />
+    <AndroidResource Include="Resources\drawable\floatx.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

@@ -56,21 +56,21 @@ namespace Macros
                     var Bmi = new BMR();
 
                     //weight = float.Parse(Weight.Text); //Kilos
-                    Bmi.weight = (float)(float.Parse(Weight.Text) * 2.2); //Lbs
-                    Bmi.height = HeightValue;
-                    Bmi.age = float.Parse(Age.Text);
+                    Bmi.Weight = (float)(float.Parse(Weight.Text) * 2.2); //Lbs
+                    Bmi.Height = HeightValue;
+                    Bmi.Age = float.Parse(Age.Text);
 
-                    Bmi.bmiValue = (float)(Bmi.weight / (Math.Pow(Bmi.height,2)))*703;
+                    Bmi.BmiValue = (float)(Bmi.Weight / (Math.Pow(Bmi.Height,2)))*703;
 
                     if (Gender.Items[Gender.SelectedIndex] == "Male")
                     {
                         //BMRValue = (float)( 10 * Bmr.weight + 6.25 * Bmr.height - 5 * Bmr.age + 5); //old
-                        FatPercentage = (float)((1.20 * Bmi.bmiValue) + (0.23 * Bmi.age) - 16.2);
+                        FatPercentage = (float)((1.20 * Bmi.BmiValue) + (0.23 * Bmi.Age) - 16.2);
                     }
                     else
                     {
                         //BMRValue = (float)(10 * Bmr.weight + 6.25 * Bmr.height - 5 * Bmr.age) ;
-                        FatPercentage = (float)((1.20 * Bmi.bmiValue) + (0.23 * Bmi.age) - 5.4);
+                        FatPercentage = (float)((1.20 * Bmi.BmiValue) + (0.23 * Bmi.Age) - 5.4);
                     }
 
                     Bmi.FatPercentageValue = FatPercentage;

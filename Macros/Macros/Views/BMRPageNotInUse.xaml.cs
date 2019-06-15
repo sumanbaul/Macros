@@ -57,23 +57,23 @@ namespace Macros
                     var Bmr = new BMR();
 
                     //weight = float.Parse(Weight.Text); //Kilos
-                    Bmr.weight = (float)(float.Parse(Weight.Text) * 2.2); //Lbs
-                      Bmr.height = HeightValue;
-                      Bmr.age = float.Parse(Age.Text);
+                    Bmr.Weight = (float)(float.Parse(Weight.Text) * 2.2); //Lbs
+                      Bmr.Height = HeightValue;
+                      Bmr.Age = float.Parse(Age.Text);
                      
                     
 
                     if (Gender.Items[Gender.SelectedIndex] == "Male")
                     {
                         //BMRValue = (float)( 10 * Bmr.weight + 6.25 * Bmr.height - 5 * Bmr.age + 5); //old
-                        BMRValue = (float)(66 + (Bmr.weight * 6.23) + (12.7 * Bmr.height) - (6.8 * Bmr.age));
+                        BMRValue = (float)(66 + (Bmr.Weight * 6.23) + (12.7 * Bmr.Height) - (6.8 * Bmr.Age));
                     }
                     else
                     {
                         //BMRValue = (float)(10 * Bmr.weight + 6.25 * Bmr.height - 5 * Bmr.age) ;
-                        BMRValue = (float)(655 + (Bmr.weight * 4.35) + (4.7 * Bmr.height) - (4.7 * Bmr.age));
+                        BMRValue = (float)(655 + (Bmr.Weight * 4.35) + (4.7 * Bmr.Height) - (4.7 * Bmr.Age));
                     }
-                    Bmr.bmrValue = BMRValue;
+                    Bmr.BmrValue = BMRValue;
 
                     BMRResult.Text = "Your BMR value is " + BMRValue.ToString("0.00");
                     BMRResult.IsVisible = true;
