@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.6 MacroMania" package="com.Devxstudio.FootPrint" android:installLocation="auto" android:versionCode="1">
 	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="28" />
-	<application android:label="FootPrint" android:icon="@drawable/icon"></application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<application android:label="FootPrint" android:icon="@drawable/icon">
+      <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    <activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" android:theme="@android:style/Theme.Translucent"></activity>
+
+  </application>
 </manifest>

@@ -34,6 +34,7 @@
     <AndroidSupportedAbis />
     <EnableProguard>true</EnableProguard>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
+    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,12 +79,16 @@
       <Version>1.0.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
+    <PackageReference Include="Xamarin.GooglePlayServices.Ads.Lite">
+      <Version>60.1142.1</Version>
+    </PackageReference>
     <!-- <PackageReference Include="Xamarin.Android.Support.Design" Version="25.4.0.2" /> -->
     <!-- <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="25.4.0.2" /> -->
     <!-- <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="25.4.0.2" /> -->
     <!-- <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="25.4.0.2" /> -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\AdViewRenderer.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -110,7 +115,9 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Tabbar.axml" />

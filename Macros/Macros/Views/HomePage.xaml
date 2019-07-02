@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Macros.HomePage"
+             xmlns:ads="clr-namespace:Macros.Controls;assembly=Macros"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
-
              Title="Footprint"
              >
     <ContentPage.Content>
@@ -175,6 +175,10 @@
                         </cv:CarouselViewControl.ItemTemplate>
                     </cv:CarouselViewControl>
 
+
+                    
+                    
+                    
                     <!--<cv:CarouselViewControl x:Name="myCarousel" BindingContext="{Binding Person}">
                         <cv:CarouselViewControl.ItemsSource>
                             <x:Array Type="{x:Type View}">
@@ -253,7 +257,9 @@
                   </CarouselView.ItemTemplate>
                 </CarouselView>-->
               </StackLayout>
-              
+
+                <ads:AdControlView BackgroundColor="Yellow" HeightRequest="200" />
+
             </StackLayout>
           
          </ScrollView>

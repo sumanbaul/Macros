@@ -19,9 +19,9 @@ namespace Macros.Pages
         Account account;
         AccountStore store;
 
-        public OAuthenticate ()
+        public OAuthenticate()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 
             store = AccountStore.Create();
             account = store.FindAccountsForService(Constants.AppName).FirstOrDefault();

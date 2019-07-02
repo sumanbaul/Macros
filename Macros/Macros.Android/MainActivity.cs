@@ -8,6 +8,7 @@ using Android.Widget;
 using Android.OS;
 using System.IO;
 using Xamarin.Forms;
+using Android.Gms.Ads;
 
 //using FootPrint.Droid;
 
@@ -29,6 +30,8 @@ namespace Macros.Droid
             string fileName = "footprint_db.sqlite";
             string fileLocation = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             string fullPath = Path.Combine(fileLocation, fileName);
+
+            MobileAds.Initialize(ApplicationContext, "ca-app-pub-6851704576749823~5571330306");
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App(fullPath));
