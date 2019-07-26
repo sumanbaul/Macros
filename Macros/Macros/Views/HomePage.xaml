@@ -4,13 +4,14 @@
              x:Class="Macros.HomePage"
              xmlns:ads="clr-namespace:Macros.Controls;assembly=Macros"
              xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              Title="Footprint"
              >
     <ContentPage.Content>
-      
-        <ScrollView x:Name="DashBoardV" BackgroundColor="#322b3d">
 
+        <ScrollView x:Name="DashBoardV" BackgroundColor="#FFFFFF">
 
+            
           <!--StackLayout Orientation="Vertical"  x:Name="CalculateBtnView">
             <StackLayout Orientation="Horizontal" Padding="5,10,5,0" HorizontalOptions="CenterAndExpand">
 
@@ -19,8 +20,59 @@
             </StackLayout>
           </StackLayout>-->
           <StackLayout Orientation="Vertical"  x:Name="DashBoardView">
-              <StackLayout Orientation="Horizontal" Padding="5,10,5,5" HeightRequest="160" HorizontalOptions="CenterAndExpand" >
+                <!--Skiasharp Slider-->
+                <StackLayout HeightRequest="150" HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <skia:SKCanvasView x:Name="canvas" 
+                            PaintSurface="OnCanvasViewPaintSurfaceAsync" 
+                            HeightRequest="150"
+                                       WidthRequest="200"
+                                       HorizontalOptions="Center"  Margin="0,0,-20, 0"
+                            BackgroundColor="#ecf0f1"/>
 
+                    <skia:SKCanvasView x:Name="canvas2" 
+                            PaintSurface="OnCanvasViewPaintSurfaceAsync" 
+                            HeightRequest="150" WidthRequest="200" HorizontalOptions="Center"
+                            BackgroundColor="#ecf0f1"/>
+                </StackLayout>
+                <Slider x:Name="sweepAngleSlider"
+                       ValueChanged="sliderValueChanged"
+                       Minimum="0" Maximum="260"
+                       IsVisible="false" />
+              
+              
+                <Frame x:Name="HomeStatsFrame" CornerRadius="10" Padding="0" Margin="10" IsClippedToBounds="False" HasShadow="True">
+                    <StackLayout Orientation="Horizontal" Padding="5,0,5,5" HeightRequest="160" HorizontalOptions="CenterAndExpand" BackgroundColor="#fff" >
+                        <Frame CornerRadius="100" Margin="0,0,-20, 0" Padding="1" HeightRequest="100" WidthRequest="100" HorizontalOptions="Start" VerticalOptions="Center" BackgroundColor="#f7f7f7" IsClippedToBounds="False" BorderColor="AliceBlue">
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" IsClippedToBounds="True" Margin="0" Padding="5,5,5,0">
+                                <Label  VerticalOptions="End" HorizontalOptions="Center" FontFamily="TitilliumWeb-SemiBold.ttf#TitilliumWeb-SemiBold"
+                                           TextColor="#f9bb3a" Text="2712" FontSize="30" FontAttributes="Bold" XAlign="Center" />
+                                <Label VerticalOptions="Start" HorizontalOptions="Center" FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" TextColor="#333" FontSize="17"  Text="Fats" XAlign="Center" />
+                            </StackLayout>
+
+                        </Frame>
+                        <Frame CornerRadius="130" Margin="0,0,7,0" Padding="1"  HeightRequest="150" WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="#f7f7f7" IsClippedToBounds="False">
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" IsClippedToBounds="True" Padding="0" Margin="0">
+                                <Label  VerticalOptions="End" HorizontalOptions="Center" FontFamily="TitilliumWeb-SemiBold.ttf#TitilliumWeb-SemiBold"
+                                         Text="20.3 %"   TextColor="Black" FontSize="30" FontAttributes="Bold" XAlign="Center" />
+                                <Label VerticalOptions="Start" HorizontalOptions="Center" FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" TextColor="#333"  FontSize="17"  Text="Fats" XAlign="Center" />
+                            </StackLayout>
+
+                        </Frame>
+                        <Frame CornerRadius="100" Margin="-20,0,0, 0" Padding="1" HeightRequest="100" WidthRequest="100" HorizontalOptions="End" VerticalOptions="Center" BackgroundColor="#f7f7f7" IsClippedToBounds="False">
+                            <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center" IsClippedToBounds="True" Padding="0" Margin="0">
+                                <Label  VerticalOptions="End" HorizontalOptions="Center" FontFamily="TitilliumWeb-SemiBold.ttf#TitilliumWeb-SemiBold"
+                                           TextColor="#e71f8c" Text="2712" FontSize="30" FontAttributes="Bold" XAlign="Center" />
+                                <Label VerticalOptions="Start" HorizontalOptions="Center" FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" TextColor="#333"  FontSize="17"  Text="Fats" XAlign="Center" />
+                            </StackLayout>
+
+                        </Frame>
+                    </StackLayout>
+                </Frame>
+
+
+                <StackLayout Orientation="Horizontal" Padding="5,10,5,5" HeightRequest="160" HorizontalOptions="CenterAndExpand" >
+
+                    
 
                 <Frame CornerRadius="5" Margin="5" Padding="0" IsClippedToBounds="True" HasShadow="True">
                   <AbsoluteLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">

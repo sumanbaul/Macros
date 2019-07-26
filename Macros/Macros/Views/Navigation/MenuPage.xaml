@@ -5,7 +5,7 @@
              xmlns:pages="clr-namespace:Macros"
              Title="I am Master" MasterBehavior="Split">
   <MasterDetailPage.Master>
-        <ContentPage BackgroundColor="#25232e" Title="Menu">
+        <ContentPage BackgroundColor="#ffffff" Title="Menu">
             
                 <StackLayout Orientation="Vertical">
 
@@ -18,7 +18,7 @@
 
                     <Image Source="{Binding Image}"  HeightRequest="100" Aspect="AspectFill"/>
 
-                    <Label Text="{Binding Footer}" TextColor="White" Margin="20,5,5,5" FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" />
+                    <Label Text="{Binding Footer}" TextColor="Accent" Margin="20,5,5,5" FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular" />
                     </StackLayout>
                     
                     <ListView x:Name="navigationDrawerList"
@@ -35,7 +35,7 @@
                                 <StackLayout VerticalOptions="FillAndExpand"
                              Orientation="Horizontal"
                              Padding="20,10,0,10"
-                             Spacing="20" BackgroundColor="#25232e">
+                             Spacing="20" BackgroundColor="#f7f7f7">
 
                                     <Image Source="{Binding Icon}"
                                          WidthRequest="40"
@@ -45,7 +45,7 @@
                                     <Label Text="{Binding Title}"
                                          FontSize="Small"
                                          VerticalOptions="Center"
-                                         TextColor="White"
+                                         TextColor="Accent"
                                          FontFamily="TitilliumWeb-Regular.ttf#TitilliumWeb-Regular"
                                     />        
                                 </StackLayout>

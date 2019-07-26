@@ -10814,11 +10814,20 @@ namespace Macros.Droid
 			// aapt resource value: 0x7f09000f
 			public const int CardView_Light = 2131296271;
 			
+			// aapt resource value: 0x7f090208
+			public const int DrawerArrowStyle = 2131296776;
+			
 			// aapt resource value: 0x7f090203
 			public const int MainTheme = 2131296771;
 			
 			// aapt resource value: 0x7f090204
 			public const int MainTheme_Base = 2131296772;
+			
+			// aapt resource value: 0x7f090206
+			public const int MyCustomTabLayout = 2131296774;
+			
+			// aapt resource value: 0x7f090207
+			public const int MyCustomTabText = 2131296775;
 			
 			// aapt resource value: 0x7f09007f
 			public const int Platform_AppCompat = 2131296383;

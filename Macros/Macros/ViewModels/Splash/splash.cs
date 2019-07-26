@@ -25,7 +25,7 @@ namespace Macros.Splash
             AbsoluteLayout.SetLayoutBounds(splashImage, new Rectangle(0.5, 0.5, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize));
             sub.Children.Add(splashImage);
 
-            this.BackgroundColor = Color.FromHex("#25232e");
+            this.BackgroundColor = Color.FromHex("#fff"); //#25232e
             this.Content = sub;
         }
 
